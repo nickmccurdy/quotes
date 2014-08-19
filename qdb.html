@@ -1,11 +1,16 @@
 <head>
   <title>qdb</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
 
 <body>
-  {{> quotes}}
+  <div class="container">
+    {{> quotes}}
 
-  {{> quickForm collection="Quotes" type="insert"}}
+    {{> quickForm collection="Quotes" type="insert"}}
+  </div>
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 
 <template name="quotes">
