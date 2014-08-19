@@ -1,15 +1,20 @@
-if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to qdb.";
-  };
+Quotes = new Meteor.Collection("quotes");
+Quotes.attachSchema(new SimpleSchema({
+  body: {
+    type: String,
+    label: "Body"
+  },
+  description: {
+    type: String,
+    label: "Description",
+    optional: true
+  }
+}));
 
-  Template.hello.events({
-    'click input': function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
-  });
+if (Meteor.isClient) {
+  Template.quotes.quotes = function () {
+    return Quotes.find({});
+  };
 }
 
 if (Meteor.isServer) {
