@@ -7,23 +7,24 @@
   <div class="container">
     {{> quotes}}
 
-    {{> quickForm collection="Quotes" type="insert"}}
+    <div class="panel panel-default">
+      <div class="panel-heading">New quote</div>
+      <div class="panel-body">
+        {{> quickForm collection="Quotes" type="insert"}}
+      </div>
+    </div>
   </div>
 
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 
 <template name="quotes">
-  <ul>
-    {{#each quotes}}
-        <li>
-          <dl>
-            <dt>Body</dt>
-            <dd>{{body}}</dd>
-            <dt>Description</dt>
-            <dd>{{description}}</dd>
-          </dl>
-        </li>
-    {{/each}}
-  </ul>
+  {{#each quotes}}
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <blockquote>{{body}}</blockquote>
+        <p>{{description}}</p>
+      </div>
+    </div>
+  {{/each}}
 </template>
