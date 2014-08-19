@@ -20,15 +20,11 @@
 
 <template name="quotes">
   {{#each quotes}}
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <blockquote>
-          <p>{{body}}</p>
-          {{#if description}}
-            <footer>{{description}}</footer>
-          {{/if}}
-        </blockquote>
-      </div>
-    </div>
+    <blockquote>
+      <p>{{body}}</p>
+      {{#if description}}
+        <footer>{{description}}</footer>
+      {{/if}}
+    </blockquote>
   {{/each}}
 </template>
