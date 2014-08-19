@@ -2,12 +2,18 @@ Quotes = new Meteor.Collection("quotes");
 Quotes.attachSchema(new SimpleSchema({
   body: {
     type: String,
-    label: "Body"
+    label: "Body",
+    autoform: {
+      rows: 6
+    }
   },
   description: {
     type: String,
     label: "Description",
-    optional: true
+    optional: true,
+    autoform: {
+      rows: 2
+    }
   }
 }));
 
