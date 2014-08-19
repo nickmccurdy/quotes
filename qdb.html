@@ -5,29 +5,20 @@
 <body>
   {{> quotes}}
 
-  {{> createQuote}}
+  {{> quickForm collection="Quotes" type="insert"}}
 </body>
 
 <template name="quotes">
   <ul>
     {{#each quotes}}
-      {{> quote}}
+        <li>
+          <dl>
+            <dt>Body</dt>
+            <dd>{{body}}</dd>
+            <dt>Description</dt>
+            <dd>{{description}}</dd>
+          </dl>
+        </li>
     {{/each}}
   </ul>
 </template>
-
-<template name="quote">
-  <li>
-    <dl>
-      <dt>Body</dt>
-      <dd>{{body}}</dd>
-      <dt>Description</dt>
-      <dd>{{description}}</dd>
-    </dl>
-  </li>
-</template>
-
-<template name="createQuote">
-  {{> quickForm collection="Quotes" type="insert"}}
-</template>
-
