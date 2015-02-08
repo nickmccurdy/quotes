@@ -18,9 +18,11 @@ Quotes.attachSchema(new SimpleSchema({
 }));
 
 if (Meteor.isClient) {
-  Template.quotes.quotes = function () {
-    return Quotes.find({});
-  };
+  Template.quotes.helpers({
+    quotes: function () {
+      return Quotes.find({});
+    }
+  });
 }
 
 if (Meteor.isServer) {
