@@ -1,4 +1,4 @@
-qdb-for-hipsters
-================
+qdb
+===
 
-Rewrite of the SSE QDB using Meteor
+A general-purpose quote database built with Meteor.
